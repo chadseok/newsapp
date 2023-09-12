@@ -15,3 +15,12 @@ export type Article = {
   publishedAt: string;
   content: string;
 };
+
+export type QueryObject = {
+  [key: string]: number | string;
+  apiKey: string;
+  country: string;
+  category: Category;
+  page: number;
+  pageSize: number;
+};
