@@ -1,14 +1,11 @@
-import type { Category } from "@/lib/types/main";
+import { makeQueryString } from "@/lib/utils/main";
+import type { QueryObject } from "@/lib/types/main";
 
-const API_KEY = import.meta.env.VITE_NEWS_API_KEY;
+export const getToptrendArticlesApi = (queryObject: QueryObject) => {
+  const queryString = makeQueryString(queryObject);
 
-export const getToptrendArticlesApi = (category: Category, page?: number) => {
   return fetch(
-    `${
-      import.meta.env.VITE_NEWS_API_URL
-    }/top-headlines?apiKey=${API_KEY}&category=${category}&page=${
-      page || 1
-    }&pageSize=12`,
+    `${import.meta.env.VITE_NEWS_API_URL}/top-headlines?${queryString}`,
     {
       method: "GET",
     }
