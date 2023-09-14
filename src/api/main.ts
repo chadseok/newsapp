@@ -1,7 +1,7 @@
 import { makeQueryString } from "@/lib/utils/main";
-import type { QueryObject } from "@/lib/types/main";
+import type { TopHeadlineQuery, SearchQuery } from "@/lib/types/main";
 
-export const getToptrendArticlesApi = (queryObject: QueryObject) => {
+export const getToptrendArticlesApi = (queryObject: TopHeadlineQuery) => {
   const queryString = makeQueryString(queryObject);
 
   return fetch(
@@ -12,4 +12,13 @@ export const getToptrendArticlesApi = (queryObject: QueryObject) => {
   );
 };
 
-export const getSearchArticlesApi = () => {};
+export const getSearchArticlesApi = (queryObject: SearchQuery) => {
+  const queryString = makeQueryString(queryObject);
+
+  return fetch(
+    `${import.meta.env.VITE_NEWS_API_URL}/everything?${queryString}`,
+    {
+      method: "GET",
+    }
+  );
+};
