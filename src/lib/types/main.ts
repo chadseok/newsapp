@@ -16,11 +16,19 @@ export type Article = {
   content: string;
 };
 
-export type QueryObject = {
+export type TopHeadlineQuery = {
   [key: string]: number | string;
   apiKey: string;
   country: string;
   category: Category;
+  page: number;
+  pageSize: number;
+};
+
+export type SearchQuery = {
+  [key: string]: number | string;
+  apiKey: string;
+  q: string;
   page: number;
   pageSize: number;
 };
