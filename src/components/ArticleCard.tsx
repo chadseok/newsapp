@@ -11,7 +11,7 @@ const ArticleCard = ({ data }: Props) => {
           <img className="w-full h-52 object-cover" src={data.urlToImage} />
           <div className="p-2">
             <span className="text-xs">{data.source.name}</span>
-            <h2 className="font-bold text-sm h-16 mt-2 text-linecut-3">
+            <h2 className="font-bold text-sm h-16 mt-2 line-clamp-3">
               {data.title}
             </h2>
           </div>
