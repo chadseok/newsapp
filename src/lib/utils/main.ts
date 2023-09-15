@@ -1,6 +1,8 @@
-import type { QueryObject } from "@/lib/types/main";
+import type { SearchQuery, TopHeadlineQuery } from "@/lib/types/main";
 
-export const makeQueryString = (queryObject: QueryObject) => {
+export const makeQueryString = (
+  queryObject: SearchQuery | TopHeadlineQuery
+) => {
   let queryString = "";
 
   for (const key in queryObject) {
